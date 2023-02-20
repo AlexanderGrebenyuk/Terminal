@@ -1,0 +1,74 @@
+1. На локальном репозитории сделать ветки для:
+- Postman
+- Jmeter
+- CheckLists
+- Bag Reports
+- SQL
+- Charles
+- Mobile testing
+=================================================
+git branch Postman
+git branch Jmeter
+git branch CheckLists
+git branch Bag_Reports
+git branch SQL
+git branch Charles
+git branch Mobile_testing
+=================================================
+
+2. Запушить все ветки на внешний репозиторий
+=================================================
+git push --all
+=================================================
+
+3. В ветке Bug Reports сделать текстовый документ со структурой баг репорта
+=================================================
+git checkout Bag_Reports
+touch bugreport.txt
+vim bugreport.txt
+i
+Обязательными полями баг репорта являются: 
+1. ID
+2. Environment
+3. Title
+4. Precondition
+5. Steps
+6. Expected result
+7. Actual result
+8. Severity
+9. Preority
+10. Attachment (link)
+11. Comment
+Esc
+:wq
+=================================================
+
+4. Запушить структуру багрепорта на внешний репозиторий
+=================================================
+git add bugreport.txt
+git commit -m "add file bugreport.txt"
+git push --set-upstream origin Bag_Reports
+=================================================
+
+5. Вмержить ветку Bag Reports в Main
+=================================================
+git checkout main
+git merge Bag_Reports
+=================================================
+
+6. Запушить main на внешний репозиторий.
+=================================================
+git push origin main
+=================================================
+
+7. На внешнем репозитории сделать Pull Request ветки CheckLists в main
+=================================================
+На интерфейсе гитхаба:
+	Compare & Pull request -> Create pull request
+	->Merge pull request -> Congfirm Merge
+=================================================
+
+8. Синхронизировать Внешнюю и Локальную ветки Main
+=================================================
+git pull
+=================================================
